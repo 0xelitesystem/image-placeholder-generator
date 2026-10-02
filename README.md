@@ -2,9 +2,18 @@
 
 Generate lightweight placeholder images as inline SVG data URIs. No raster encoding, no network request. Set the size, colors, label, and style, then copy the output in the format you need.
 
-## Live demo
+**Live demo:** https://0xelitesystem.github.io/image-placeholder-generator/
 
-https://0xelitesystem.github.io/image-placeholder-generator/
+## Use
+
+1. Set the width and height.
+2. Pick background and text colours, a label, a font size (zero auto-sizes), and the solid or cross style.
+3. Check the live preview.
+4. Click **Copy** next to the format you need: raw SVG, data URI, `<img>` tag, or CSS background-image.
+
+## Why this exists
+
+Mockups and layouts need placeholder images, and pulling them from a remote placeholder service adds a network dependency. This tool generates tiny inline SVG placeholders locally. It is one HTML file with inline CSS and JavaScript: no account, no tracking, no analytics, no external scripts or fonts, and it works offline. MIT licensed, so you can fork it, self-host it, or read every line.
 
 ## Features
 
@@ -21,7 +30,20 @@ The tool assembles a small SVG string from your inputs: a `<rect>` for the backg
 
 ## Privacy
 
-Everything is generated in your browser. Your inputs and the generated markup never leave your machine. There are no external requests, no analytics, and no tracking.
+Everything is generated in your browser. Your inputs and the generated markup never leave your machine. There are no external requests, no analytics, and no tracking. The only thing written to storage is your light or dark theme choice, saved in localStorage under the key `theme`.
+
+## Run locally
+
+```bash
+git clone https://github.com/0xelitesystem/image-placeholder-generator
+cd image-placeholder-generator
+```
+
+Then open `index.html` in any modern browser. Or serve the folder with `python -m http.server 8000` and visit http://localhost:8000.
+
+## Build
+
+No build step. The whole tool is one `index.html` with no dependencies, so there is nothing to install or compile.
 
 ## More
 
